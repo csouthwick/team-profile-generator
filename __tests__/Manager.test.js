@@ -11,25 +11,25 @@ test('creates an manager object', () => {
 });
 
 test('returns the manager\'s name', () => {
-  const manager = new Manager('Alice', 1, 'alice@company.com');
+  const manager = new Manager('Alice', 1, 'alice@company.com', 302);
 
   expect(manager.getName()).toBe('Alice');
 });
 
 test('returns the manager\'s id', () => {
-  const manager = new Manager('Alice', 1, 'alice@company.com');
+  const manager = new Manager('Alice', 1, 'alice@company.com', 302);
 
   expect(manager.getId()).toBe(1);
 });
 
 test('returns the manager\'s email', () => {
-  const manager = new Manager('Alice', 1, 'alice@company.com');
+  const manager = new Manager('Alice', 1, 'alice@company.com', 302);
 
-  expect(manager.getEmail()).toBe('alice@company.com');
+  expect(manager.getEmail()).toBe('alice@company.com', 302);
 });
 
 test('returns the manager\'s role', () => {
-  const manager = new Manager('Alice', 1, 'alice@company.com');
+  const manager = new Manager('Alice', 1, 'alice@company.com', 302);
 
   expect(manager.getRole()).toBe('Manager');
 });
