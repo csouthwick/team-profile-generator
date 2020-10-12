@@ -5,8 +5,8 @@
 
 const generateManager = manager => {
   return `
-<div class="card">
-  <div class="card-header">
+<div class="card m-2 shadow-sm">
+  <div class="card-header bg-primary text-light">
     <h2 class="card-title">${manager.getName()}</h2>
     <h3 class="card-subtitle">${manager.getRole()}</h3>
   </div>
@@ -24,8 +24,8 @@ const generateManager = manager => {
 const generateEngineers = engineers => {
   return engineers.map(engineer => {
     return `
-<div class="card">
-  <div class="card-header">
+<div class="card m-2 shadow-sm">
+  <div class="card-header bg-primary text-light">
     <h2 class="card-title">${engineer.getName()}</h2>
     <h3 class="card-subtitle">${engineer.getRole()}</h3>
   </div>
@@ -44,8 +44,8 @@ const generateEngineers = engineers => {
 const generateInterns = interns => {
   return interns.map(intern => {
     return `
-<div class="card">
-  <div class="card-header">
+<div class="card m-2 shadow-sm flex-wrap">
+  <div class="card-header bg-primary text-light">
     <h2 class="card-title">${intern.getName()}</h2>
     <h3 class="card-subtitle">${intern.getRole()}</h3>
   </div>
@@ -75,7 +75,7 @@ module.exports = team => {
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <header class="jumbotron text-center">
+    <header class="jumbotron text-center bg-dark text-light">
       <h1>My Team</h1>
     </header>
     <main class="container d-flex p-2">
