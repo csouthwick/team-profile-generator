@@ -2,7 +2,9 @@ const inquirer = require('inquirer');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
-const { managerQuestions, mainMenu, engineerQuestions, internQuestions } = require('./lib/questions');;
+const { managerQuestions, mainMenu, engineerQuestions, internQuestions } = require('./utils/questions');
+const generatePage = require('./src/page-template');
+const writeFile = require('./utils/generate-site');
 
 const promptManager = () => {
   inquirer.prompt(managerQuestions)
@@ -28,7 +30,7 @@ const promptMainMenu = team => {
           promptIntern(team);
           break;
         case 'Generate the finished team profile':
-          console.log(team);
+          saveTeamProfile(generatePage(team));
           break;
       }
     });
@@ -50,4 +52,14 @@ const promptIntern = team => {
     });
 };
 
+const saveTeamProfile = pageHtml => {
+  writeFile(pageHtml)
+    .then(status => {
+      console.log(status.message);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+};
 
+promptManager();
