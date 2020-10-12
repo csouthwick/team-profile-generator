@@ -78,7 +78,7 @@ module.exports = team => {
     <header class="jumbotron text-center bg-dark text-light">
       <h1>My Team</h1>
     </header>
-    <main class="container d-flex p-2">
+    <main class="container d-flex flex-wrap">
       ${generateManager(manager)}
       ${generateEngineers(engineers)}
       ${generateInterns(interns)}
